@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/hedvig-letters-serif" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Serif:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #F3F2EC;
+        }
+
+        .nav {
+            width: 100%;
+            flex-shrink: 0;
+            background: #E62727;
+            display: flex;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav img {
+            width: 121px;
+            height: 65px;
+            flex-shrink: 0;
+            aspect-ratio: 130/71;
+            margin-left: 40px;
+        }
+
+        .nav ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+            margin-left: 28px;
+            position: relative;
+        }
+
+        .nav ul li a {
+            position: relative;
+            display: inline-block;
+            text-decoration: none;
+            color: #F3F2EC;
+            font-family: 'Raleway', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            margin: 0 15px;
+            padding: 0;
+        }
+
+        .profil {
+            margin-left: 550px;
+        }
+
+        .profil a {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .nav ul li a::before {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            height: 1.5px;
+            background-color: white;
+            width: 100%;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s ease;
+        }
+
+        .nav ul li a:hover::before {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+                    .active{
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .menu-card {
+            width: 592.805px;
+            height: 1100.796px;
+            flex-shrink: 0;
+            border-radius: 30px;
+            border: 3px dashed #E62727;
+            margin-top: 150px;
+        }
+        .menu-card-2 {
+            width: 592.805px;
+            height: 1100.796px;
+            flex-shrink: 0;
+            border-radius: 30px;
+            border: 3px dashed #E62727;
+            margin-top: 150px;
+        }
+        .menu-card {
+            width: 592.805px;
+            height: 1100.796px;
+            flex-shrink: 0;
+            border-radius: 30px;
+            border: 3px dashed #E62727;
+            margin-top: 150px;
+        }
+
+        .menu {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .menu-head {
+            width: 555.771px;
+            height: 95.92px;
+            flex-shrink: 0;
+            border-radius: 14.69px;
+            background: #E62727;
+            margin-top: 16px;
+            display: flex;
+            flex-direction: row;
+            margin-left: 19px;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+
+        .head-img img {
+            width: 55.048px;
+            height: 77.27px;
+            flex-shrink: 0;
+            aspect-ratio: 55.05/77.27;
+            border-radius: 14.691px;
+            background: #F3F2EC;
+            margin-right: 10px;
+        }
+            .texthead h2 {
+            color: #F3F2EC;
+            -webkit-text-stroke-width: 0.43px;
+            -webkit-text-stroke-color: #F3F2EC;
+            font-family: 'Klee One', sans-serif;
+            font-size: 24.196px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: normal;
+            letter-spacing: 2.42px;
+        }
+            .menu-card-3 .texthead h2 {
+            color: #F3F2EC;
+            -webkit-text-stroke-width: 0.43px;
+            -webkit-text-stroke-color: #F3F2EC;
+            font-family: 'Klee One', sans-serif;
+            font-size: 24.196px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: normal;
+            letter-spacing: 2.42px;
+            margin-top: -10px;
+        }
+
+        .menu-card-3 .texthead {
+            margin-left: 10px;
+        }
+
+        .menu-card-3 .texthead p {
+            color: #F3F2EC;
+            font-family: 'Inter', sans-serif;
+            font-size: 12.962px;
+            font-style: italic;
+            font-weight: 200;
+            line-height: normal;
+        }
+        .menu-card-3 .texthead h2 {
+            color: #F3F2EC;
+            -webkit-text-stroke-width: 0.43px;
+            -webkit-text-stroke-color: #F3F2EC;
+            font-family: 'Klee One', sans-serif;
+            font-size: 24.196px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: normal;
+            letter-spacing: 2.42px;
+        }
+
+        .texthead {
+            margin-left: 10px;
+        }
+
+        .texthead p {
+            color: #F3F2EC;
+            font-family: 'Inter', sans-serif;
+            font-size: 12.962px;
+            font-style: italic;
+            font-weight: 200;
+            line-height: normal;
+        }
+
+        .main-menu {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 23px;
+            color: #000;
+        }
+
+        .main-head h3 {
+            font-family: "Hedvig Letters Serif";
+            font-size: 17.283px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+
+        .img-main {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .rendang-img {
+            width: 136px;
+            height: 136px;
+            flex-shrink: 0;
+            aspect-ratio: 1/1;
+            border-radius: 348.5px;
+            background: url(rendang.jpg) lightgray -2.262px -63.485px / 110.569% 174.632% no-repeat;
+        }
+
+        .cancang-img {
+            width: 136px;
+            height: 136px;
+            flex-shrink: 0;
+            aspect-ratio: 1/1;
+            border-radius: 68px;
+            background: url(cancang.jpg) lightgray 50% / cover no-repeat;
+        }
+
+        .dendeng-img {
+            width: 136px;
+            height: 136px;
+            flex-shrink: 0;
+            aspect-ratio: 1/1;
+            border-radius: 68px;
+            background: url(dendeng.jpg) lightgray 50% / cover no-repeat;
+        }
+
+        .img-main h3 {
+            margin-top: 17px;
+            color: #000;
+            font-family: "Inria Serif";
+            font-size: 15px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+
+        .img-main p {
+            width: 181px;
+            margin-top: 4px;
+            color: #000;
+            text-align: center;
+            font-family: "Inria Serif";
+            font-size: 9px;
+            font-style: italic;
+            font-weight: 300;
+            line-height: 15px;
+        }
+
+        .rendang, .cancang, .dendeng {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .menu-pilihan {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: space-evenly;
+            margin-top: 10px;
+        }
+
+        .menu-pilihan h2 {
+            color: #000000;
+            font-family: "Hedvig Letters Serif";
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            display: inline;
+            margin: 20px 0;
+        }
+
+        .menu-text h3 {
+            color: #000;
+            font-family: "Inria Serif";
+            font-size: 13px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            margin-top: 10px;
+        }
+
+        .active-btn{
+            transform: scale(1.2);
+            background-color: #AF1D1D !important;
+            transition: all 0.2s;
+        }
+
+        /* ========== JARAK KHUSUS JUDUL MINUMAN ========== */
+h2.soda,
+h2.teh,
+h2.kopi {
+    margin: 25px 0 15px 0 !important;
+}
+        .menu-pilihan p {
+            color: #000;
+            font-family: "Inria Serif";
+            font-size: 8px;
+            font-style: italic;
+            font-weight: 300;
+            line-height: 12px;
+        }
+
+        .harga {
+            color: #000;
+            font-family: "Inria Serif";
+            font-size: 15px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+
+        .menu-1, .menu-2 {
+            width: 40%;
+        }
+
+        .menu-2{
+            margin-top: -10px;
+        }
+
+        /* ===== PENAMBAHAN BARU ===== */
+        .menu-body {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+
+        .menu-text {
+            flex: 1;
+        }
+
+        .harga {
+            margin-left: auto;
+            text-align: right;
+        }
+
+        /* Agar harga sejajar dengan h3 dan rata kanan */
+.menu-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.menu-text {
+    flex: 1;
+}
+
+.harga p {
+color: #000000;
+font-family: "Inria Serif";
+font-size: 15px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+.menu-pilihan{
+    margin-top: 30px;
+}
+
+/* ========== CSS BARU UNTUK menu-card-2 ========== */
+.menu-card-2 {
+    width: 592.805px;
+    height: 1100.796px;
+    flex-shrink: 0;
+    border-radius: 30px;
+    border: 3px dashed #E62727;
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* wrapper kolom kiri & kanan di dalam menu-card-2 */
+.menu-card-2 .menu-pilihan {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    margin-top: 30px;
+}
+
+/* tiap kolom lebarnya 40% (sama seperti .menu-1 / .menu-2) */
+.menu-card-2 .menu-kanan-1,
+.menu-card-2 .menu-kanan-2 {
+    width: 40%;
+}
+
+/* judul kategori */
+.menu-card-2 h2 {
+    color: #000000;
+    font-family: "Hedvig Letters Serif";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 20px 0;
+}
+
+/* baris menu (nama + harga) */
+.menu-card-2 .menu-body-2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* nama + deskripsi */
+.menu-card-2 .menu-text-2 {
+    flex: 1;
+}
+
+.menu-card-2 .menu-text-2 h3 {
+    color: #000;
+    font-family: "Inria Serif";
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 10px;
+}
+
+.menu-card-2 .menu-text-2 p {
+    color: #000;
+    font-family: "Inria Serif";
+    font-size: 8px;
+    font-style: italic;
+    font-weight: 300;
+    line-height: 12px;
+}
+
+/* harga di pojok kanan */
+.menu-card-2 .harga p {
+    color: #000000;
+    font-family: "Inria Serif";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-left: auto;
+    text-align: right;
+}
+
+/* teks "Nasi Tambah" besar (opsi kalau mau sama persis) */
+.menu-card-2 .nasi {
+    font-family: "Inria Serif";
+    font-size: 15px;
+    font-weight: 600;
+    margin: 20px 0 8px;
+}
+
+.menu-card-2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.menu-card-2 { flex-direction: row !important; }
+/* ========== AKHIR CSS TAMBAHAN ========== */
+
+.menu-kanan-1{
+    margin-top: -550px;
+}
+.menu-kanan-2{
+    margin-top: -750px;
+}
+
+/* ========= KARTU MINUMAN – menu-card-3 ========= */
+.menu-card-3 {
+    width: 592.805px;
+    height: 1100.796px;
+    flex-shrink: 0;
+    border-radius: 30px;
+    border: 3px dashed #E62727;
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu-card-3 .menu-pilihan {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 30px;
+}
+.menu-card-3 .minuman-kiri,
+.menu-card-3 .minuman-kanan {
+    width: 40%;
+}
+
+.menu-card-3 .menu-head{
+    margin-left: -7px;
+}
+.menu-card-3 .menu-body-3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.menu-card-3 .menu-text-3 {
+    flex: 1;
+}
+.menu-card-3 .menu-text-3 h3 {
+    color: #000;
+    font-family: "Inria Serif";
+    font-size: 13px;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 10px;
+}
+.menu-card-3 .menu-text-3 p {
+    color: #000;
+    font-family: "Inria Serif";
+    font-size: 8px;
+    font-style: italic;
+    font-weight: 300;
+    line-height: 12px;
+}
+.menu-card-3 .harga p {
+    color: #000000;
+    font-family: "Inria Serif";
+    font-size: 15px;
+    font-weight: 400;
+    line-height: normal;
+    margin-left: auto;
+    text-align: right;
+}
+/* Jarak atas-bawah untuk judul minuman */
+
+.menu-card-3{
+    margin-left: 28%
+}
+
+#daftar{
+    color: #000;
+    font-family: 'Klee One', sans-serif;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #000;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.pilih{
+    text-align: center;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+}
+
+.menu-card, .menu-card-3, .menu-card-2{
+    margin-top: 60px
+}
+
+.pilih button{
+width: 172px;
+height: 44px;
+flex-shrink: 0;
+border-radius: 27px;
+background: #E62727;
+color: #FFF;
+font-family: Raleway;
+font-size: 16px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+outline: none;
+border: none;
+}
+
+.pilih button:hover{
+    background: #AF1D1D;
+}
+
+/* ====== ANIMASI SLIDE-KANAN ====== */
+@keyframes slideInRight {
+    0%   { transform: translateX(100%); opacity: 0; }
+    100% { transform: translateX(0);   opacity: 1; }
+}
+
+.slide-right {
+    animation: slideInRight .6s ease-out forwards;
+}
+
+#print{
+    margin-top: 90px;
+    margin-bottom: 200px;
+    margin-left: 42%;
+    border-radius: 10px;
+    background: #1E93AB;
+    width: 203px;
+    font-family: 'Raleway', sans-serif;
+    height: 55.76px;
+    outline: none;
+    border: none;
+    flex-shrink: 0;
+    color: #FFF;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <div class="logo">
+                <img src="logo.png" alt="">
+            </div>
+            <ul>
+                <li><a href="landing.php">HOME</a></li>
+                <li><a href="menu.html">MENU</a></li>
+                <li><a href="reservasi.html">RESERVASI</a></li>
+                <li><a href="tentang-kami.html">TENTANG KAMI</a></li>
+                <li class="profil">
+                    <a href="#" id="userDropdownBtn">
+                        Login <i class="fa fa-caret-down"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <h2 id="daftar">DAFTAR MENU</h2>
+
+        <div class="pilih">
+            <button id="btn1">Makanan</button>
+            <button id="btn2">Minuman</button>
+        </div>
+
+        <div class="menu">
+            <div class="menu-card" id="menu-card-1">
+                <div class="menu-head">
+                    <div class="texthead">
+                        <h2>LAMAK BANA</h2>
+                        <p>"Menghadirkan cita rasa autentik Minang dalam sentuhan modern yang elegan."</p>
+                    </div>
+                    <div class="head-img">
+                        <img src="halal1.png" alt="">
+                    </div>
+                </div>
+
+                <div class="main-menu">
+                    <div class="main-head">
+                        <h3>TOP 3 MENU PILIHAN</h3>
+                    </div>
+
+                    <div class="img-main">
+                        <div class="rendang">
+                            <div class="rendang-img"></div>
+                            <h3>Rendang</h3>
+                            <p>Figma ipsum component variant main layer. Pencil connection library </p>
+                        </div>
+
+                        <div class="cancang">
+                            <div class="cancang-img"></div>
+                            <h3>Cancang Kambing</h3>
+                            <p>Figma ipsum component variant main layer. Pencil connection library </p>
+                        </div>
+                        <div class="dendeng">
+                            <div class="dendeng-img"></div>
+                            <h3>Dendeng</h3>
+                            <p>Figma ipsum component variant main layer. Pencil connection library </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-pilihan">
+                    <div class="menu-1">
+                        <div class="ds">
+                            <h2>Daging Sapi & Kambing</h2>
+                            <div class="menu-body">
+                                <div class="menu-text">
+                                    <h3>Rendang</h3>
+                                    <p>Daging sapi dimasak dengan santan dan rempah Minang hingga bumbu meresap sempurna.</p>
+                                </div>
+                                <div class="harga">
+                                    <p>25</p>
+                                </div>
+                            </div>
+                            <div class="menu-body">
+                                <div class="menu-text">
+                                    <h3>Dendeng</h3>
+                                    <p>Irisan tipis daging sapi digoreng kering, disajikan dengan sambal khas.</p>
+                                </div>
+                                <div class="harga">
+                                    <p>23</p>
+                                </div>
+                            </div>
+                            <div class="menu-body">
+                                <div class="menu-text">
+                                    <h3>Dendeng Batotok</h3>
+                                    <p>Daging sapi dipipihkan, dibakar atau digoreng, lalu disiram sambal cabai hijau pedas segar.</p>
+                                </div>
+                                <div class="harga">
+                                    <p>25</p>
+                                </div>
+                            </div>
+                            <div class="menu-body">
+                                <div class="menu-text">
+                                    <h3>Cancang Kambing</h3>
+                                    <p>Potongan daging kambing dimasak dalam gulai pedas gurih khas Padang.</p>
+                                </div>
+                                <div class="harga">
+                                    <p>30</p>
+                                </div>
+                            </div>
+                            <div class="menu-body">
+                                <div class="menu-text">
+                                    <h3>Gulai Tambunsu / Babat</h3>
+                                    <p>Isi perut sapi (babat/usus) dimasak dengan kuah santan kental berbumbu rempah</p>
+                                </div>
+                                <div class="harga">
+                                    <p>25</p>
+                                </div>
+                            </div>
+                            <div class="menu-body">
+                                <div class="menu-text">
+                                    <h3>Rendang</h3>
+                                    <p>Daging sapi dimasak dengan santan dan rempah Minang hingga bumbu meresap sempurna.</p>
+                                </div>
+                                <div class="harga">
+                                    <p>25</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ayam">
+                            <h2>Ayam</h2>
+                            <div class="menu-body">
+                                <div class="menu-text">
+                                    <h3>Ayam Gulai</h3>
+                                    <p>Ayam dimasak dalam kuah santan berbumbu kuning gurih pedas.</p>
+                                </div>
+                                <div class="harga">
+                                    <p>17</p>
+                                </div>
+                            </div>
+                            <div class="menu-body">
+                                <div class="menu-text">
+                                    <h3>Ayam Pop</h3>
+                                    <p>Ayam rebus khas Padang bertekstur lembut, disajikan dengan sambal tomat.</p>
+                                </div>
+                                <div class="harga">
+                                    <p>20</p>
+                                </div>
+                            </div>
+                            <div class="menu-body">
+                                <div class="menu-text">
+                                    <h3>Ayam Balado</h3>
+                                    <p>Ayam goreng disiram dengan sambal merah khas Minang.</p>
+                                </div>
+                                <div class="harga">
+                                    <p>17</p>
+                                </div>
+                            </div>
+                            <div class="menu-body">
+                                <div class="menu-text">
+                                    <h3>Ayam Lado Hijau</h3>
+                                    <p>Ayam digoreng lalu dilumuri sambal cabai hijau segar</p>
+                                </div>
+                                <div class="harga">
+                                    <p>17</p>
+                                </div>
+                            </div>
+                            <div class="menu-body">
+                                <div class="menu-text">
+                                    <h3>Ayam Bakar</h3>
+                                    <p>Ayam dibakar dengan bumbu kecap dan rempah, cita rasa manis gurih.</p>
+                                </div>
+                                <div class="harga">
+                                    <p>22</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-2">
+                        <div class="ayam2">
+                            <div class="menu-body">
+                                <div class="menu-text">
+                                    <h3>Ayam Kecap</h3>
+                                    <p>Ayam dimasak dengan bumbu kecap manis, sederhana namun menggugah selera.</p>
+                                </div>
+                                <div class="harga">
+                                    <p>20</p>
+                                </div>
+                            </div>
+                            <div class="menu-body">
+                                <div class="menu-text">
+                                    <h3>Ayam Rendang</h3>
+                                    <p>Ayam dimasak seperti rendang sapi, dengan bumbu santan kental kaya rempah.</p>
+                                </div>
+                                <div class="harga">
+                                    <p>18</p>
+                                </div>
+                            </div>
+                            <div class="menu-body">
+                                <div class="menu-text">
+                                    <h3>Ayam Saus</h3>
+                                    <p>Ayam goreng disajikan dengan pilihan saus (manis/pedas/asam manis).</p>
+                                </div>
+                                <div class="harga">
+                                    <p>18</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ikan">
+                            <h2>Ikan dan Seafood</h2>
+                            <div class="menu-body">
+                                <div class="menu-text">
+                                    <h3>Ikan Bakar</h3>
+                                    <p>Ikan segar yang dibakar dengan bumbu khas Padang.</p>
+                                </div>
+                                <div class="harga">
+                                    <p>20</p>
+                                </div>
+                            </div>
+                            <div class="menu-body">
+                                <div class="menu-text">
+                                    <h3>Ikan Gurame Gulai</h3>
+                                    <p>Ikan gurame dimasak dengan gulai santan kental dan rempah.</p>
+                                </div>
+                                <div class="harga">
+                                    <p>21</p>
+                                </div>
+                            </div>
+                            <div class="menu-body">
+                                <div class="menu-text">
+                                    <h3>Ikan Mujair</h3>
+                                    <p>Ikan segar digoreng garing dengan bumbu sederhana.</p>
+                                </div>
+                                <div class="harga">
+                                    <p>15</p>
+                                </div>
+                            </div>
+                            <div class="menu-body">
+                                <div class="menu-text">
+                                    <h3>Ikan Mujair</h3>
+                                    <p>Mujair goreng atau gulai sesuai pilihan, bercita rasa gurih.</p>
+                                </div>
+                                <div class="harga">
+                                    <p>16</p>
+                                </div>
+                            </div>
+                            <div class="menu-body">
+                                <div class="menu-text">
+                                    <h3>Ikan Lele Goreng</h3>
+                                    <p>Lele segar digoreng renyah, cocok dengan sambal.</p>
+                                </div>
+                                <div class="harga">
+                                    <p>12</p>
+                                </div>
+                            </div>
+                            <div class="menu-body">
+                                <div class="menu-text">
+                                    <h3>Belut Goreng</h3>
+                                    <p>Belut digoreng renyah, gurih menggoda.</p>
+                                </div>
+                                <div class="harga">
+                                    <p>18</p>
+                                </div>
+                            </div>
+                            <div class="menu-body">
+                                <div class="menu-text">
+                                    <h3>Ikan Nila Kuah Kuning</h3>
+                                    <p>Ikan nila dimasak dengan kuah kuning gurih segar.</p>
+                                </div>
+                                <div class="harga">
+                                    <p>20</p>
+                                </div>
+                            </div>
+                            <div class="menu-body">
+                                <div class="menu-text">
+                                    <h3>Ikan Tenggiri</h3>
+                                    <p>Tenggiri segar dimasak sesuai pilihan: gulai, goreng, atau balado.</p>
+                                </div>
+                                <div class="harga">
+                                    <p>20</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+ <!-- GANTI SELURUH BLOK INI (dari <div class="menu-card-2"> sampai penutupnya) -->
+<div class="menu-card-2" id="menu-card-2">
+    <!-- KIRI -->
+    <div class="menu-kanan-1">
+        <div class="menu-body-2">
+            <div class="menu-text-2">
+                <h3>Cumi - Cumi</h3>
+                <p>Cumi segar yang dimasak balado atau goreng tepung.</p>
+            </div>
+            <div class="harga"><p>25</p></div>
+        </div>
+        <div class="menu-body-2">
+            <div class="menu-text-2">
+                <h3>Udang</h3>
+                <p>Udang segar dengan pilihan saus Padang, goreng, atau gulai.</p>
+            </div>
+            <div class="harga"><p>25</p></div>
+        </div>
+        <div class="menu-body-2">
+            <div class="menu-text-2">
+                <h3>Ikan Tongkol</h3>
+                <p>Tongkol dimasak balado atau gulai, khas rasa Nusantara.</p>
+            </div>
+            <div class="harga"><p>25</p></div>
+        </div>
+
+        <h2>Tambahan</h2>
+        <div class="menu-body-2">
+            <div class="menu-text-2"><h3>Kerupuk Kulit</h3></div>
+            <div class="harga"><p>4</p></div>
+        </div>
+        <div class="menu-body-2">
+            <div class="menu-text-2"><h3>Kerupuk Udang</h3></div>
+            <div class="harga"><p>4</p></div>
+        </div>
+        <div class="menu-body-2">
+            <div class="menu-text-2"><h3>Emping</h3></div>
+            <div class="harga"><p>4</p></div>
+        </div>
+        <div class="menu-body-2">
+            <div class="menu-text-2"><h3>Sambal Bawang</h3></div>
+            <div class="harga"><p>5</p></div>
+        </div>
+        <div class="menu-body-2">
+            <div class="menu-text-2"><h3>Sambal Terasi</h3></div>
+            <div class="harga"><p>5</p></div>
+        </div>
+        <div class="menu-body-2">
+            <div class="menu-text-2"><h3>Sambal Lado Hijau</h3></div>
+            <div class="harga"><p>5</p></div>
+        </div>
+        <div class="menu-body-2">
+            <div class="menu-text-2"><h3>Sambalado</h3></div>
+            <div class="harga"><p>5</p></div>
+        </div>
+        <div class="menu-body-2">
+            <div class="menu-text-2"><h3>Lalapan</h3></div>
+            <div class="harga"><p>5</p></div>
+        </div>
+        <div class="menu-body-2">
+            <div class="menu-text-2"><h3>Perkedel</h3></div>
+            <div class="harga"><p>5</p></div>
+        </div>
+    </div>
+
+    <!-- KANAN -->
+    <div class="menu-kanan-2">
+        <h2>Lainnya</h2>
+        <div class="menu-body-2">
+            <div class="menu-text-2">
+                <h3>Telur Dadar / Mata Sapi</h3>
+                <p>Telur goreng sederhana khas rumah makan Padang.</p>
+            </div>
+            <div class="harga"><p>6</p></div>
+        </div>
+        <div class="menu-body-2">
+            <div class="menu-text-2">
+                <h3>Telur Ayam Rebus</h3>
+                <p>Telur rebus polos, bisa disantap dengan gulai atau sambal.</p>
+            </div>
+            <div class="harga"><p>6</p></div>
+        </div>
+        <div class="menu-body-2">
+            <div class="menu-text-2">
+                <h3>Terong Balado</h3>
+                <p>Terong iris goreng, disiram sambal merah khas Minang.</p>
+            </div>
+            <div class="harga"><p>10</p></div>
+        </div>
+        <div class="menu-body-2">
+            <div class="menu-text-2">
+                <h3>Cah Kangkung</h3>
+                <p>Kangkung segar ditumis dengan bawang putih dan cabai.</p>
+            </div>
+            <div class="harga"><p>8</p></div>
+        </div>
+
+        <p class="nasi">Nasi Tambah</p>
+
+        <div class="menu-body-2">
+            <div class="menu-text-2"><h3>Nasi Bungkus</h3></div>
+            <div class="harga"><p>10</p></div>
+        </div>
+        <div class="menu-body-2">
+            <div class="menu-text-2"><h3>Nasi Tambah</h3></div>
+            <div class="harga"><p>5</p></div>
+        </div>
+    </div>
+</div>
+            </div>
+        </div>
+
+        <div class="menu-minuman" id="menu-card-3">
+            <div class="menu-card-3">
+    <div class="menu-head">
+        <div class="texthead">
+            <h2>LAMAK BANA</h2>
+            <p>"“Menghadirkan cita rasa autentik Minang dalam sentuhan modern yang elegan.”"</p>
+        </div>
+        <div class="head-img">
+            <img src="halal1.png" alt="">
+        </div>
+    </div>
+
+    <div class="menu-pilihan">
+        <!-- KOLOM KIRI -->
+        <div class="minuman-kiri">
+            <h2>SUSU</h2>
+            <div class="menu-body-3">
+                <div class="menu-text-3"><h3>Susu Coklat / Vanila, Stoberi</h3></div>
+                <div class="harga"><p>10</p></div>
+            </div>
+            <div class="menu-body-3">
+                <div class="menu-text-3"><h3>Susu Boruang</h3></div>
+                <div class="harga"><p>12</p></div>
+            </div>
+            <div class="menu-body-3">
+                <div class="menu-text-3"><h3>Susu Sapi Hangat</h3></div>
+                <div class="harga"><p>12</p></div>
+            </div>
+
+            <h2 class="soda">SODA</h2>
+            <div class="menu-body-3">
+                <div class="menu-text-3"><h3>Coca-Cola</h3></div>
+                <div class="harga"><p>8</p></div>
+            </div>
+            <div class="menu-body-3">
+                <div class="menu-text-3"><h3>Sprite</h3></div>
+                <div class="harga"><p>8</p></div>
+            </div>
+            <div class="menu-body-3">
+                <div class="menu-text-3"><h3>Fanta</h3></div>
+                <div class="harga"><p>8</p></div>
+            </div>
+
+            <h2 class="teh">TEH</h2>
+            <div class="menu-body-3">
+                <div class="menu-text-3"><h3>Teh Talua</h3></div>
+                <div class="harga"><p>8</p></div>
+            </div>
+            <div class="menu-body-3">
+                <div class="menu-text-3"><h3>Teh Tarik</h3></div>
+                <div class="harga"><p>8</p></div>
+            </div>
+            <div class="menu-body-3">
+                <div class="menu-text-3"><h3>Teh Es</h3></div>
+                <div class="harga"><p>5</p></div>
+            </div>
+            <div class="menu-body-3">
+                <div class="menu-text-3"><h3>Teh Manis</h3></div>
+                <div class="harga"><p>5</p></div>
+            </div>
+            <div class="menu-body-3">
+                <div class="menu-text-3"><h3>Teh Susu</h3></div>
+                <div class="harga"><p>5</p></div>
+            </div>
+        </div>
+
+        <!-- KOLOM KANAN -->
+        <div class="minuman-kanan">
+            <h2>JUS BUAH</h2>
+            <div class="menu-body-3">
+                <div class="menu-text-3"><h3>Jus Jeruk</h3></div>
+                <div class="harga"><p>10</p></div>
+            </div>
+            <div class="menu-body-3">
+                <div class="menu-text-3"><h3>Jus Mangga</h3></div>
+                <div class="harga"><p>12</p></div>
+            </div>
+            <div class="menu-body-3">
+                <div class="menu-text-3"><h3>Jus Alpukat</h3></div>
+                <div class="harga"><p>12</p></div>
+            </div>
+            <div class="menu-body-3">
+                <div class="menu-text-3"><h3>Jus Naga</h3></div>
+                <div class="harga"><p>12</p></div>
+            </div>
+            <div class="menu-body-3">
+                <div class="menu-text-3"><h3>Jus Tomat</h3></div>
+                <div class="harga"><p>12</p></div>
+            </div>
+            <div class="menu-body-3">
+                <div class="menu-text-3"><h3>Jus Timun</h3></div>
+                <div class="harga"><p>12</p></div>
+            </div>
+            <div class="menu-body-3">
+                <div class="menu-text-3"><h3>Jus Jambu Biji</h3></div>
+                <div class="harga"><p>12</p></div>
+            </div>
+            <div class="menu-body-3">
+                <div class="menu-text-3"><h3>Jus Sirsak</h3></div>
+                <div class="harga"><p>12</p></div>
+            </div>
+
+            <h2 class="kopi">KOPI</h2>
+            <div class="menu-body-3">
+                <div class="menu-text-3"><h3>Kopi Susu</h3></div>
+                <div class="harga"><p>8</p></div>
+            </div>
+            <div class="menu-body-3">
+                <div class="menu-text-3"><h3>Kopi Gula Aren</h3></div>
+                <div class="harga"><p>8</p></div>
+            </div>
+            <div class="menu-body-3">
+                <div class="menu-text-3"><h3>Kopi Hitam</h3></div>
+                <div class="harga"><p>5</p></div>
+            </div>
+            <div class="menu-body-3">
+                <div class="menu-text-3"><h3>Latte</h3></div>
+                <div class="harga"><p>15</p></div>
+            </div>
+        </div>
+    </div>
+</div>
+        </div>
+
+        <button id="print">Download PDF</button>
+    </div>
+</body>
+<script src="script.js"></script>
+<script>
+    let btn1 = document.getElementById('btn1');
+    let btn2 = document.getElementById('btn2');
+    let menu1 = document.getElementById('menu-card-1');
+    let menu2 = document.getElementById('menu-card-2');
+    let menu3 = document.getElementById('menu-card-3');
+    menu3.style.display = 'none'
+    btn1.addEventListener('click', function(){
+        menu3.style.display = 'none'
+        menu1.style.display = 'block'
+        menu2.style.display = 'flex'
+    })
+    
+    btn2.addEventListener('click', function(){
+        menu1.style.display = 'none'
+        menu2.style.display = 'none'
+        menu3.style.display = 'block'
+    })
+
+const cards = document.querySelectorAll('.menu-card, .menu-card-2, .menu-card-3');
+
+const io = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) { 
+            entry.target.classList.add('slide-right');
+            io.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.25 });  
+
+cards.forEach(card => io.observe(card));
+
+btn1.classList.add('active-btn')
+
+btn1.addEventListener('click', function(){
+    btn1.classList.add('active-btn')
+    btn2.classList.remove('active-btn')
+})
+btn2.addEventListener('click', function(){
+    btn2.classList.add('active-btn')
+    btn1.classList.remove('active-btn')
+})
+</script>
+</html>

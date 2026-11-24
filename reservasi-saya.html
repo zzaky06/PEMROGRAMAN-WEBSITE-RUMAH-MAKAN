@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Serif:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/hedvig-letters-serif" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Varta:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            background-color: #F3F2EC;
+        }
+
+        .nav{
+            width: 100%;
+            flex-shrink: 0;
+            background: #E62727;
+            display: flex;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav img{
+            width: 121px;
+            height: 65px;
+            flex-shrink: 0;
+            aspect-ratio: 130/71;
+            margin-left: 40px;
+        }
+
+        .nav ul{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+            margin-left: 28px;
+            position: relative;
+        }
+
+        .nav ul li a {
+            position: relative;
+            display: inline-block; /* mengikuti teks */
+            text-decoration: none;
+            color: #F3F2EC;
+            font-family: 'Raleway', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            margin: 0 15px; /* jarak antar menu */
+            padding: 0;     /* hapus padding biar garis pas teks */
+        }
+
+        .profil{
+            padding-left: 570px;
+        }
+
+                .nav ul li a::before {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            height: 1.5px;
+            background-color: white;
+            width: 100%;              /* ikut lebar teks <a> */
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s ease;
+        }
+            .nav ul li a:hover::before {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        h1{
+            font-family: 'Julius Sans One', sans-serif;
+            padding-top: 50px;
+        }
+
+        .btn-reservasi button{
+            background-color: #E62727;
+            width: 130px;
+            height: 35px;
+            border-radius: 10px;
+            outline: none;
+            border: none;
+            color: white;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 600;
+        }
+
+        .btn-reservasi{
+            display: flex;
+            flex-direction: row;
+            gap: 40px;
+        }
+
+        .card {
+            background-color: #e5e5e5;
+            border-radius: 20px;
+            box-shadow: 0 2px 10px rgb(0, 0, 0);
+            width: 450px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            height: 300px;
+        }
+
+        .card .head{
+            background-color: #E62727;
+        }
+
+        .card img{
+            width: 101px;
+            height: 55px;
+            margin-left: 40px;
+        }
+
+        .body-reservasi-saya{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .info p{
+            font-family:'Raleway', sans-serif ;
+            font-weight: bold;
+            margin-left: 35px;
+        }
+
+        #Tanggal{
+            margin-top: 15px;
+        }
+
+        #Nama{
+            margin-top: 20px;
+        }
+
+        #HP, #jt, #jk, #catatan{
+            margin-top: 12px;
+        }
+
+        .button-info{
+            position: absolute;
+            right: 20px;
+            bottom: 10px;
+            display: flex;
+            gap: 12px;
+        }
+
+        .button-info button{
+            padding: 4px 20px;
+            border: none;
+            outline: none;
+            border-radius: 6px;
+            font-family:'Raleway', sans-serif ;
+            font-weight: bold;
+            color: white;
+        }
+
+        #btn-selesai{
+            background-color: #E62727;
+        }
+
+        #batalkan{
+            background-color: #1E93AB;
+        }
+
+        .container-card, .container-card-selesai{
+            display: flex;
+            gap: 50px;
+        }
+
+        .btn-reservasi{
+            display: none;
+        }
+
+        .teks-reservasi{
+            font-family:'Raleway', sans-serif ;
+            font-style: italic;
+            font-weight: 200;
+            margin-top: -30px;
+        }
+
+        .reservasi-now{
+            font-size: 20px;
+            color: white;
+            background-color: #E62727;
+            border: none;
+            outline: none;
+            padding: 14px 40px;
+            border-radius: 20px;
+            box-shadow: 0 2px 10px rgb(0, 0, 0);
+            font-family:'Raleway', sans-serif ;
+            font-weight: bold;
+            margin-top: 60px;
+        }
+
+        .fa-solid{
+            font-size: 100px;
+            color: rgb(70, 69, 69);
+        }
+
+        .container-teks{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .popup-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(3px);
+    z-index: 999;
+}
+.popup-box {
+    position: fixed;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    z-index: 1000;
+    width: 300px;
+}
+.popup-box p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+.popup-buttons {
+    display: flex;
+    justify-content: space-around;
+}
+.popup-buttons button {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: 'Raleway', sans-serif;
+}
+#popupOk {
+    background-color: #E62727;
+    color: white;
+}
+#popupCancel {
+    background-color: #aaa;
+    color: white;
+}
+
+    .active-btn{
+    transform: scale(1.2);
+    background-color: #af1d1d !important;
+    transition: all 0.2s;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+                <div class="nav">
+            <div class="logo">
+                <img src="logo.png" alt="">
+            </div>
+                <ul>
+                <li><a href="landing.php">HOME</a></li>
+                <li><a href="menu.html">MENU</a></li>
+                <li><a href="reservasi.html">RESERVASI</a></li>
+                    <li><a href="tentang-kami.html">TENTANG KAMI</a></li>
+                    <div class="profil">
+                    <li><a href="login.php" style="color:#fff;">Login</a></li>
+                    </div>
+                    </ul>
+                    </div>
+                <div class="body-reservasi-saya">
+                    <h1>RESERVASI</h1>
+                    <div class="btn-reservasi">
+                        <button id="berlangsung">Berlangsung</button>
+                        <button id="selesai">Selesai</button>
+                    </div>
+                    <div class="container-card" id="container-card">
+                    </div>
+                    <div class="container-card-selesai" id="container-card-selesai"></div>
+                    <div class="container-teks">
+                    <i class="fa-solid fa-concierge-bell"></i>
+                    <h2 class="teks-reservasi">Belum ada reservasi aktif. Yuk, buat reservasi sekarang!</h2>
+                    <button class="reservasi-now" id="btnReservasi">Reservasi Sekarang</button>
+                    </div>
+                </div>
+    </div>
+</body>
+<script src="script.js"></script>
+<script src="reservasi.js"></script>
+
+<script>
+document.getElementById('btnReservasi').addEventListener('click', function() {
+    alert('Kamu akan diarahkan ke halaman reservasi!');
+    window.location.href = 'form-reservasi.html';
+});
+
+window.addEventListener('DOMContentLoaded', function() {
+    const dataArray = JSON.parse(localStorage.getItem('reservasiDataArray')) || [];
+
+    if (dataArray.length > 0) {
+        const container = document.getElementById('container-card');
+        const btnReservasi = document.querySelector('.btn-reservasi');
+        const containerTeks = document.querySelector('.container-teks');
+
+        dataArray.forEach(data => {
+            container.innerHTML += `
+                <div class="card">
+                    <div class="head">
+                        <img src="logo.png" alt="">
+                    </div>
+                    <div class="info">
+                        <p id="Tanggal">${data.tanggal}</p>
+                        <p id="Nama">Nama : <span>${data.nama}</span></p>
+                        <p id="HP">HP : <span>${data.hp}</span></p>
+                        <p id="jt">Jumlah Tamu : <span>${data.jumlah}</span></p>
+                        <p id="jk">Jam Kedatangan : <span>${data.jam}</span></p>
+                        <p id="catatan">Catatan : <span>${data.catatan}</span></p>
+                        <div class="button-info">
+                            <button class="batalkan" id = "batalkan">Batalkan</button>
+                            <button class="btn-selesai" id = "btn-selesai">Selesai</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+
+        btnReservasi.style.display = "flex";
+        containerTeks.style.display = "none";
+    }
+});
+
+const selesai = document.getElementById('selesai');
+const berlangsung = document.getElementById('berlangsung');
+berlangsung.classList.add('active-btn');
+
+berlangsung.addEventListener('click', function(){
+    berlangsung.classList.add('active-btn');
+    selesai.classList.remove('active-btn');
+
+    document.getElementById('container-card-selesai').style.display = 'flex';
+    document.getElementById('container-card').style.display = 'none';
+});
+
+selesai.addEventListener('click', function(){
+    selesai.classList.add('active-btn');
+    berlangsung.classList.remove('active-btn');
+
+    document.getElementById('container-card').style.display = 'flex';
+    document.getElementById('container-card-selesai').style.display = 'none';
+});
+selesai.addEventListener('click', function(){
+    document.getElementById('container-card-selesai').style.display = 'flex';
+    document.getElementById('container-card').style.display = 'none';
+});
+berlangsung.addEventListener('click', function(){
+    document.getElementById('container-card').style.display = 'flex';
+    document.getElementById('container-card-selesai').style.display = 'none';
+});
+
+// Fungsi popup konfirmasi custom
+function showPopupConfirm(message, onConfirm) {
+    const popup = document.createElement('div');
+    popup.innerHTML = `
+        <div class="popup-overlay"></div>
+        <div class="popup-box">
+            <p>${message}</p>
+            <div class="popup-buttons">
+                <button id="popupCancel">Tidak</button>
+                <button id="popupOk">Ya</button>
+            </div>
+        </div>
+    `;
+    document.body.appendChild(popup);
+
+    // Event tombol
+    document.getElementById('popupCancel').onclick = () => popup.remove();
+    document.getElementById('popupOk').onclick = () => {
+        popup.remove();
+        onConfirm();
+    };
+}
+
+document.addEventListener('click', function(e) {
+    if (e.target.classList.contains('batalkan')) {
+        const card = e.target.closest('.card');
+        showPopupConfirm("Yakin mau batalkan reservasi ini?", () => {
+            const index = Array.from(card.parentNode.children).indexOf(card);
+            card.remove();
+
+            // Hapus data dari localStorage
+            let dataArray = JSON.parse(localStorage.getItem('reservasiDataArray')) || [];
+            dataArray.splice(index, 1);
+            localStorage.setItem('reservasiDataArray', JSON.stringify(dataArray));
+        });
+    }
+
+    if (e.target.classList.contains('btn-selesai')) {
+        const card = e.target.closest('.card');
+        const selesaiContainer = document.getElementById('container-card-selesai');
+        const berlangsungContainer = document.getElementById('container-card');
+
+        if (card) {
+            berlangsungContainer.removeChild(card);
+            selesaiContainer.appendChild(card);
+
+            const btnGroup = card.querySelector('.button-info');
+            if (btnGroup) {
+                btnGroup.innerHTML = `<span style="color:green;font-weight:bold;font-family:'Raleway';">✔️ Reservasi Selesai</span>`;
+            }
+        }
+    }
+});
+
+
+
+
+</script>
+
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/hedvig-letters-serif" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Serif:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+              * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #F3F2EC;
+        }
+
+        .nav {
+            width: 100%;
+            flex-shrink: 0;
+            background: #E62727;
+            display: flex;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav img {
+            width: 121px;
+            height: 65px;
+            flex-shrink: 0;
+            aspect-ratio: 130/71;
+            margin-left: 40px;
+        }
+
+        .nav ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+            margin-left: 28px;
+            position: relative;
+        }
+
+        .nav ul li a {
+            position: relative;
+            display: inline-block;
+            text-decoration: none;
+            color: #F3F2EC;
+            font-family: 'Raleway', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            margin: 0 15px;
+            padding: 0;
+        }
+
+        .profil {
+            margin-left: 550px;
+        }
+
+        .profil a {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .nav ul li a::before {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            height: 1.5px;
+            background-color: white;
+            width: 100%;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s ease;
+        }
+
+        .nav ul li a:hover::before {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .main{
+            height: 100vh;
+            width: 100vw;
+
+        }
+
+        .main{
+            width: 100%;
+            height: 100vh;
+            background: url('reservasi.jpeg') lightgray 50% / cover no-repeat;
+            box-shadow: 0 160px 100px 0 rgba(0, 0, 0, 0.80) inset;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .button{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+
+    .tambah , .reservasi-saya {
+    background-color: #E62727;
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            color: #ffffff;
+            padding: 16px 36px;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: inset 0 4px 30px rgba(255, 255, 255, 0.671);
+            letter-spacing: 0.5px;
+            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
+            opacity: 0.7;
+        }
+
+        .tambah .btn-span {
+            font-size: 22px;
+            font-weight: bold;
+            border: 2px solid white;
+            width: 28px;
+            height: 28px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+                <div class="nav">
+            <div class="logo">
+                <img src="logo.png" alt="">
+            </div>
+            <ul>
+                <li><a href="landing.php">HOME</a></li>
+                <li><a href="menu.html">MENU</a></li>
+                <li><a href="reservasi.html">RESERVASI</a></li>
+                <li><a href="tentang-kami.html">TENTANG KAMI</a></li>
+                <li class="profil">
+                    <a href="#" id="userDropdownBtn">
+                        Login <i class="fa fa-caret-down"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="main">
+            <div class="button">
+            <button class="tambah" id="tambah"><span class="btn-span">+</span> Tambah Reservasi</button>
+            <button class="reservasi-saya" id="rs">Reservasi saya</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="script.js"></script>
+<script>
+const tambah = document.getElementById('tambah');
+tambah.addEventListener('click', function(){
+    window.location.href = 'form-reservasi.html'
+})
+const rs = document.getElementById('rs');
+rs.addEventListener('click', function(){
+    window.location.href = 'reservasi-saya.html'
+})
+
+
+</script>
+</html>

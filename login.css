@@ -1,0 +1,347 @@
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;  
+      background-color:#DCDCDC;
+      font-family: Arial, sans-serif;
+    }
+
+    .container{
+      position: relative;
+      width: 850px;
+      height: 550px;
+      border-radius: 30px;
+      box-shadow: 0 0 30px rgb(0, 0, 2);
+      background-color: #fff;
+      overflow: hidden;
+    }
+
+    .form-box{
+      position: absolute;
+      right: 0;
+      width: 50%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      color: #333;
+      text-align: center;
+      padding: 40px;
+      background-color: #fff;
+      z-index: 1;
+      transition: .6s ease-in-out 1.2s, visibility 0s 1s;
+    }
+
+    .container.active .form-box{
+      right: 50%;
+    }
+
+    .form-box.register{
+      visibility: hidden;
+    }
+
+    .container.active .form-box.register{
+      visibility: visible;
+    }
+
+    form{
+      width: 100%;
+    }
+
+    .container h1{
+      font-size: 36px;
+      margin: -10px 0 20px;
+    }
+
+    .input-box{
+      position: relative;
+      margin: 20px 0;
+    }
+
+    .input-box input{
+      width: 100%;
+      padding: 13px 50px 10px 13px;
+      border-radius: 9px;
+      border: 1px solid black;
+      outline: none;
+      font-size: 16px;
+      color: #333;
+      font-weight: 500;
+    }
+
+    .label-box{
+        position: absolute;
+        top: 13px;
+        margin-left: 15px;
+    }
+
+    .label-box label{
+        display: inline;
+        background-color: #fff;
+    }
+    .input-box i{
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 20px;
+      color: #888;
+    }
+
+
+    .forgot-link a{
+      font-size: 11px;
+      color: #333;
+      text-decoration:line;
+      font-style: italic;
+      cursor: pointer;
+    }
+    .forgot-link{
+        margin-top: -37px;
+    }
+
+    .btn{
+      width: 205px;
+      height: 35px;
+      background-color: #1e93ab;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+      color: #fff;
+      font-weight: 800;
+      transition: 0.3s;
+
+    }
+
+    .btn:hover {
+      background-color: #34b7d1;
+    }
+
+    .container p {
+      color: #333;
+      margin:15px 0 ;
+    }
+
+    .social-icons a{
+      display: inline-flex;
+      padding: 8px;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      font-size: 26px;
+      color: #333;
+      text-decoration: none;
+      margin: 0 8px;
+      transition: 0.3s;
+    }
+
+    .social-icons a:hover {
+      border-color: #1e93ab;
+      color: #1e93ab;
+    }
+
+    .toggle-box{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+
+    .toggle-box::before{
+      content: '';
+      position: absolute;
+      left: -250%;
+      width: 300%;
+      height: 100%;
+      background-color: #E62727;
+      border-radius: 150px;
+      z-index: 2;
+      transition: 1.8s ease-in-out;
+    }
+
+    .container.active .toggle-box::before{
+      left: 50%;
+    }
+
+    .toggle-panel{
+      position: absolute;
+      width: 50%;
+      height: 100%;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 2;
+      transition: .6s ease-in-out;
+      text-align: center;
+      padding: 0 30px;
+    }
+
+    .container.active .toggle-panel.toggle-right{
+      right: 0;
+      transition-delay: 1.2s;
+    }
+
+    .toggle-panel.toggle-left{
+      left: 0;
+      transition-delay: 1.2s ;
+    }
+
+    .container.active .toggle-panel.toggle-left{
+      left: -50%;
+      transition-delay: .6s;
+    }
+
+    .toggle-panel.toggle-right{
+      right: -50%;
+      transition-delay: .6s;
+    }
+
+    .toggle-panel p{
+      margin-bottom: 20px;
+      color: white;
+    }
+
+    .toggle-panel .btn{
+      width: 160px;
+      height: 46px;
+      background: transparent;
+      border: 2px solid#fff;
+      box-shadow: none;
+    }
+
+    /* === Forgot Password Style === */
+    .form-box.forgot {
+      top: -100%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      visibility: hidden;
+      justify-content: center;
+      align-items: center;
+      transition: .6s ease-in-out;
+      position: absolute;
+    }
+
+    .container.forgot-active .form-box.forgot {
+      top: 0;
+      opacity: 1;
+      visibility: visible;
+      z-index: 5;
+    }
+
+    /* Card forgot password */
+    .form-box.forgot form {
+      background: #fff;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+      position: relative;
+      width: 80%;
+      max-width: 400px;
+      z-index: 2;
+    }
+
+    /* Before & After Decoration */
+    .form-box.forgot::before,
+    .form-box.forgot::after {
+      content: '';
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #595e6b, #1e93ab);
+      opacity: 0.2;
+      z-index: 1;
+    }
+
+    .form-box.forgot::before {
+      top: 10%;
+      left: 10%;
+    }
+
+    .form-box.forgot::after {
+      bottom: 15%;
+      right: 15%;
+    }
+
+    .form-box.forgot h1 {
+      margin-bottom: 25px;
+      font-size: 28px;
+      color: #333;
+    }
+
+    .form-box.forgot .input-box {
+      margin: 15px 0;
+    }
+
+    .form-box.forgot input {
+      background-color: #ffffff;
+      border: 1px solid #000000;
+
+    }
+
+    .form-box.forgot .btn {
+      margin-top: 20px;
+    }
+
+    /* Tombol Back */
+    #backLogin {
+      margin-top: 15px;
+      background: transparent;
+      border: 2px solid #1e93ab;
+      border-radius: 8px;
+      color: #1e93ab;
+      width: 205px;
+      height: 35px;
+      border-radius: 8px;
+      font-weight: 800;
+      cursor: pointer;
+
+    }
+
+    #backLogin:hover {
+      background: #1e93ab;
+      color: #fff;
+    }
+
+    .remember label{
+        font-size: 0.8em;
+        font-size: 12.5px;
+    }
+
+    .remember-box{
+        margin-top: 40px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 13px;
+    }
+
+    .input-box label{
+        position: absolute;
+        left: 0;
+        margin-left: 15px;
+        margin-top: 12px;
+ pointer-events: none;
+  transition: all 0.3s ease; /* biar smooth */
+        display: inline;
+        background-color: #FFF;
+    }
+
+.input-box input:focus ~ label,
+.input-box input:valid ~ label {
+  transform: translateY(-20px);
+  font-size: 0.9em;
+}
+.toggle-panel h1{
+    font-family: 'Kaushan Script', cursive;
+}

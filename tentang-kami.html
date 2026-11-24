@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Serif:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/hedvig-letters-serif" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Varta:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+                * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #F3F2EC;
+        }
+
+        .nav {
+            width: 100%;
+            flex-shrink: 0;
+            background: #E62727;
+            display: flex;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav img {
+            width: 121px;
+            height: 65px;
+            flex-shrink: 0;
+            aspect-ratio: 130/71;
+            margin-left: 40px;
+        }
+
+        .nav ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+            margin-left: 28px;
+            position: relative;
+        }
+
+        .nav ul li a {
+            position: relative;
+            display: inline-block;
+            text-decoration: none;
+            color: #F3F2EC;
+            font-family: 'Raleway', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            margin: 0 15px;
+            padding: 0;
+        }
+
+        .profil {
+            margin-left: 550px;
+        }
+
+        .profil a {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .nav ul li a::before {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            height: 1.5px;
+            background-color: white;
+            width: 100%;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s ease;
+        }
+
+        .nav ul li a:hover::before {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .body-text{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .body-text h1{
+            font-family: "Hedvig Letters Serif";
+            font-weight: 200;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+
+        .body-text p{
+            font-family: 'Inria Serif', serif;
+            width: 83%;
+            text-align: center;
+            letter-spacing: 2px;
+            font-weight: 100;
+            line-height: 2;
+        }
+
+        .scroll-img {
+            margin-top: 40px;
+            height: 350px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 30px;
+            overflow-x: auto;
+            overflow-y: hidden;
+            padding-bottom: 10px;
+            scroll-behavior: smooth;
+            margin-bottom: 40px;
+
+            /* Hilangkan scrollbar */
+            scrollbar-width: none;      /* Firefox */
+        }
+        .scroll-img::-webkit-scrollbar {
+            display: none;              /* Chrome, Edge, Safari */
+        }
+
+
+        .card-img {
+            width: 40%;
+            height: 330px;
+            margin: 20px auto;
+            border: 8px solid #e62727;
+            border-radius: 50px;
+            flex-shrink: 0;
+        }
+
+        .card1{
+            background: url(scrol1.jpeg);
+            background-position: center;
+            background-size: cover;
+        }
+        .card2{
+            background: url(scrol4.jpeg);
+            background-position: center;
+            background-size: cover;
+        }
+        .card3{
+            background: url(scrol3.jpeg);
+            background-position: center;
+            background-size: cover;
+        }
+        .card4{
+            background: url(scrol2.jpeg);
+            background-position: center;
+            background-size: cover;
+        }
+        .ulasan {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .ulasan h1{
+            font-family: "Hedvig Letters Serif";
+            font-weight: 200;
+            margin-bottom: 30px;
+        }
+        .lokasi h1{
+            font-family: "Hedvig Letters Serif";
+            font-weight: 200;
+            margin-bottom: 30px;
+            margin-top: 30px;
+        }
+
+        .card-ulasan{
+            background-color: #e5e5e5;
+            width: 560px;
+            height: 198px;
+            border-radius: 12px;
+            position:relative;
+        }
+
+        .card-ulasan p{
+            margin-left: 23px;
+            font-family: 'Raleway', sans-serif;
+
+        }
+
+        .span{
+            position: absolute;
+            right: 20px;
+        }
+
+        .card-ulasan .nama{
+            padding-top: 20px;
+            padding-bottom: 2px;
+        }
+
+        .nama, .tanggal{
+            font-weight: 600;
+        }
+
+        .komen{
+            padding-top: 20px;
+            line-height: 1.5;
+        }
+
+        .container-card{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .img-bawah{
+            height: 353px;
+            width: 100%;
+            margin-top: 70px;
+            background: url(bawah.jpeg);
+            background-position: center;
+            background-size: cover;
+        }
+
+        .lokasi{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .tempat{
+            width: 834px;
+            height: 389px;
+            border-radius: 20px;
+            background: url(lokasi.png);
+            background-size: cover;
+            background-position: center;
+            margin-bottom: 30px;
+        }
+
+        .lokasi a{
+            color: black;
+            text-decoration: none;
+            transform: scale(1.5);
+            font-family: 'Inria Serif', serif;
+            font-weight: 200;
+            margin-bottom: 30px;
+        }
+
+                    .info-kami{
+                background: #E62727;
+                height: 540px;
+                position: relative;
+            }
+
+            .info-content{
+                display: flex;
+                flex: row;
+                padding-top: 58px;
+                position: relative;
+            }
+
+            .contact{
+                display: flex;
+                flex-direction: column;
+            }
+
+            .info-content .judul{
+                color: #FFF;
+                font-family: Raleway;
+                font-size: 35px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: normal;
+            }
+
+            .info-content .text{
+                color: #FFF;
+                font-family: Raleway;
+                font-size: 19px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 40px; /* 181.818% */
+            }
+            .info-content .fa-brands{
+                color: #FFF;
+                font-size: 35px;
+                padding-right: 20px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 40px; /* 181.818% */
+            }
+
+            .info-content a{
+                color: #FFF;
+                font-family: Raleway;
+                font-size: 19px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: normal;
+                text-decoration: none;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .alamat , .contact{
+                display: flex;
+                flex-direction: column;
+                gap: 18px;
+                position: relative;
+            }
+
+            .alamat{
+                margin-left: 60px;
+            }
+
+            .contact{
+                margin-left: 90px;
+            }
+            .contact .link-info{
+                padding-right: 70px;
+                text-decoration: underline;
+                color: #FFF;
+                font-family: Raleway;
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 40px; /* 181.818% */
+            }
+            .contact .link-info-2{
+                padding-right: 85px;
+                text-decoration: underline;
+                color: #FFF;
+                font-family: Raleway;
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 40px; /* 181.818% */
+            }
+
+            .link-content{
+                margin-top: 25px;
+            }
+
+            .copy{
+                color: #ffffff;
+                font-family: Raleway;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: normal;
+                position: absolute;
+                bottom: -100px;
+            }
+
+            .icon{
+                display: flex;
+                flex-direction: column;
+                gap: 28px;
+            }
+
+            h1{
+                font-size: 2.5em;
+            }
+
+    </style>
+</head>
+<body>
+    <div class="conatiner">
+                <div class="nav">
+            <div class="logo">
+                <img src="logo.png" alt="">
+            </div>
+            <ul>
+                <li><a href="landing.php">HOME</a></li>
+                <li><a href="menu.html">MENU</a></li>
+                <li><a href="reservasi.html">RESERVASI</a></li>
+                <li><a href="tentang-kami.html">TENTANG KAMI</a></li>
+                <li class="profil">
+                    <a href="#" id="userDropdownBtn">
+                        Login <i class="fa fa-caret-down"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="body-text">
+            <h1>LAMAK BANA</h1>
+            <p>Figma ipsum component variant main layer. Boolean group content boolean variant vector hand bold library. Project list strikethrough layout list bold stroke. Community layout style flows team move draft prototype rectangle. Project bullet prototype list undo ipsum undo selection fill. Community layout style flows team move draft prototype rectangle. Project bullet prototype list undo ipsum undo selection fill. Community layout style flows team move draft prototype rectangle. Project bullet prototype list undo ipsum undo selection fill.</p>
+        </div>
+
+        <div class="scroll-img">
+            <div class="card-img card1"></div>
+            <div class="card-img card2"></div>
+            <div class="card-img card3"></div>
+            <div class="card-img card4"></div>
+        </div>
+
+        <div class="ulasan">
+            <h1>ULASAN TERATAS</h1>
+
+            <div class="container-card">
+                <div class="card-ulasan">
+                    <p class="nama">Rani Pratama <span class="span">⭐ 5/5</span></p>
+                    <p class="tanggal">10 September 2025</p>
+                    <p class="komen">“Tempatnya nyaman banget, vibes-nya bikin betah makan lama. Makanannya tuh berasa banget bumbunya, apalagi ayam lado hijau-nya, pedesnya pas! Pelayanan juga cepat dan ramah. Pokoknya bakal balik lagi deh!”</p>
+                </div>
+                <div class="card-ulasan">
+                    <p class="nama">DImas Aditya <span class="span">⭐ 4/5</span></p>
+                    <p class="tanggal">2 Oktober 2025</p>
+                    <p class="komen">“Suka banget sama konsep makanannya yang tradisional tapi penyajiannya modern. Porsi besar dan harga masih masuk akal. Cuma parkiran agak sempit dikit, tapi overall worth it banget.”</p>
+                </div>
+                <div class="card-ulasan">
+                    <p class="nama">Sinta Maharani <span class="span">⭐ 5/5</span></p>
+                    <p class="tanggal">18 Oktober 2025</p>
+                    <p class="komen">“Restoran favorit keluarga! Anak-anak juga suka banget sama nasi goreng kampungnya. Tempat bersih, ada area outdoor yang adem, cocok buat makan sore bareng keluarga.”</p>
+                </div>
+                <div class="card-ulasan">
+                    <p class="nama">Andi Rahman <span class="span">⭐ 5/5</span></p>
+                    <p class="tanggal">25 Oktober 2025</p>
+                    <p class="komen">“Pelayanan super ramah, pesanan cepat keluar, dan makanan datang dalam keadaan panas, mantap banget! Saya suka sistem reservasinya juga, mudah dan responsif.”</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="img-bawah"></div>
+
+        <div class="lokasi">
+            <h1>LOKASI</h1>
+            <div class="tempat"></div>
+            <a href="">Open In Maps <i class="fa-solid fa-arrow-up-right-from-square"></i>
+</a>
+        </div>
+
+            <div class="info-kami aos aos--fade-right">
+        <div class="info-content">
+        <div class="alamat">
+            <p class="judul">LAMAK BANA</p>
+            <p class="text">JL. Figma ipsum component variant main layer. Stroke layer slice layer project</p>
+            <p class="text">+628 1112 3333 222</p>
+            <p class="text">lamakbaanaresto@gmail.com</p>
+            <p class="copy">&copy;2025 Lamak Baana | All rights reserved</p>
+        </div>
+
+        <div class="contact">
+            <div class="icon">
+            <p class="judul">Follow Us</p>
+            <a  href="https://instagram.com/akunmu" target="_blank" class="social instagram">
+            <i class="fa-brands fa-instagram"></i>lamakbanaresto
+            </a>
+            
+            <a href="https://tiktok.com/@akunmu" target="_blank" class="social tiktok">
+         <i class="fa-brands fa-tiktok"></i>lamakbanaresto
+         </a>
+
+            <a href="https://facebook.com/akunmu" target="_blank" class="social facebook">
+            <i class="fa-brands fa-facebook"></i>lamakbanaresto
+            </a>
+            </div>
+            <div class="link-content">
+            <a href="" class="link-info">Privacy Policy</a>
+            <a href="" class="link-info link-info-2">Term of Use</a>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+</body>
+<script defer src="script.js"></script>
+</html>
